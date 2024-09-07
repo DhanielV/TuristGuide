@@ -14,10 +14,11 @@ public class TouristService {
         this.touristRepository = touristRepository;
     }
 
+
     //CRUD
     //Create
-    public void addAttraction(TouristAttraction touristAttraction) {
-        touristRepository.addAttraction(touristAttraction);
+    public TouristAttraction addAttraction(TouristAttraction touristAttraction) {
+        return touristRepository.addAttraction(touristAttraction);
     }
 
     //Read
@@ -29,13 +30,14 @@ public class TouristService {
         return touristRepository.findByName(name);
     }
 
+
     //Update
-    public boolean updateAttraction(String name, TouristAttraction updatedAttraction) {
+    public TouristAttraction updateAttraction(String name, TouristAttraction updatedAttraction) {
         return touristRepository.updateAttraction(name, updatedAttraction);
     }
 
     //Delete
-    public boolean deleteAttraction(String name) {
+    public TouristAttraction deleteAttraction(String name) {
         return touristRepository.deleteAttraction(name);
     }
 }

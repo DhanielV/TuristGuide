@@ -1,0 +1,40 @@
+body{
+    font-family: "arial", sans-serif;
+    margin: 0 2rem 0 2rem;
+    background: url("images/1200px-Tourist_Terrorista.jpg") no-repeat ;
+    background-size: 100%;
+}
+.textContainer{
+    color: black;
+
+    background: rgba(255, 255, 255, 0.8);
+    padding: 2rem;
+
+}
+footer{
+    color: mediumvioletred;
+    background: black;
+    width: 7rem ;
+    height: 5rem;
+
+}
+
+
+button {
+    border-radius: 20px;
+    border: none;
+    background-color: black;
+    color:white;
+    padding: 5px;
+    cursor: pointer;
+}
+
+li {
+    list-style: none;
+}
+
+ul {
+    display:flex;
+    flex-direction: row;
+    gap: 2rem;
+}

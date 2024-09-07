@@ -11,14 +11,21 @@ public class TouristRepository {
     private final List<TouristAttraction> attractions = new ArrayList<>();
 
     public TouristRepository(){
-        attractions.add(new TouristAttraction("Gade", "Smuk"));
-        attractions.add(new TouristAttraction("Vej", "Gammel"));
+        populateAttractions();
+    }
+
+    public void populateAttractions(){
+        attractions.add(new TouristAttraction("Venice", "Venice faces a tourist crisis with overcrowding,cruises environmental damage, and rising living costs, threatening the city’s heritage and driving locals away."));
+        attractions.add(new TouristAttraction("Barcelona", "Barcelona is experiencing a tourist crisis with overcrowding, rising living costs, and strain on local infrastructure, disrupting daily life and fueling anti-tourism sentiments among residents."));
+
     }
 
     //CRUD
     //Create
-    public void addAttraction(TouristAttraction touristAttraction){
+    public TouristAttraction addAttraction(TouristAttraction touristAttraction){
+
         attractions.add(touristAttraction);
+        return touristAttraction;
     }
     //Read
     public List<TouristAttraction> findAll(){
@@ -33,17 +40,26 @@ public class TouristRepository {
         return null;
     }
     //Update
-    public boolean updateAttraction(String name, TouristAttraction updatedAttraction) {
+    public TouristAttraction updateAttraction(String name, TouristAttraction updatedAttraction) {
         for (int i = 0; i < attractions.size(); i++) {
             if (attractions.get(i).getName().equalsIgnoreCase(name)) {
                 attractions.set(i, updatedAttraction);
-                return true;
+                return updatedAttraction;
+
             }
         }
-        return false;
+        return null;
     }
     //Delete
-    public boolean deleteAttraction(String name) {
-        return attractions.removeIf(attraction -> attraction.getName().equalsIgnoreCase(name));
+    public TouristAttraction deleteAttraction(String name) {
+        TouristAttraction attractionToDelete = findByName(name);
+            if (attractionToDelete != null){
+                attractions.remove(attractionToDelete);
+                return attractionToDelete;
+            }
+
+
+
+        return null;
     }
 }

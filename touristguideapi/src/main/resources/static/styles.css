@@ -1,15 +1,48 @@
 body{
+    margin: 0;
     font-family: "arial", sans-serif;
-    margin: 0 2rem 0 2rem;
     background: url("images/1200px-Tourist_Terrorista.jpg") no-repeat ;
     background-size: 100%;
 }
+
+main {
+    margin: 0 2rem 0 2rem;
+
+}
+header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: red;
+    justify-items: center;
+    align-items: center;
+    width: 100vw; /* Ensures header spans the full viewport width */
+    margin: 0; /* Removes any default margin */
+    padding: 0; /* Removes any padding that might affect the width */
+    box-sizing: border-box; /* Ensures padding is included within the width */
+}
 .textContainer{
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+
+}
+
+@media (max-width: 700px) {
+    .textContainer {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    body {
+        background: url("images/1200px-Tourist_Terrorista.jpg") repeat ;
+    }
+}
+.text{
     color: black;
 
     background: rgba(255, 255, 255, 0.8);
     padding: 2rem;
-
 }
 footer{
     color: mediumvioletred;
@@ -18,6 +51,8 @@ footer{
     height: 5rem;
 
 }
+
+
 
 
 button {
